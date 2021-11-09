@@ -1,0 +1,4 @@
+计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers\  Tortoise9Unversioned
+
+
+注册表编辑器   找到以上目录，在前九个加七个空格
