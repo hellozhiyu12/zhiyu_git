@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<!-- mybatis的主配置文件 -->
+<configuration>
+
+    <properties resource="db.properties"/>
+
+    <!--    <typeAliases>-->
+    <!--        <typeAlias type="cn.bdqn.domain.Employee"/>-->
+    <!--    </typeAliases>-->
+    <!--    <typeAliases>-->
+    <!--        <typeAlias type="cn.bdqn.domain.Employee" alias="Emp"/>-->
+    <!--    </typeAliases>-->
+    <!--    <typeAliases>-->
+    <!--        &lt;!&ndash; 为某一个包以及子包中的所有类批量起别名  &ndash;&gt;-->
+    <!--        <package name="cn.bdqn.domain" />-->
+    <!--    </typeAliases>-->
+    <typeAliases>
+        <!-- 为某一个包以及子包中的所有类批量起别名  -->
+        <package name="cn.bdqn.domain"/>
+    </typeAliases>
+
+
+    <!-- 配置环境 -->
+    <environments default="mysql">
+        <!-- 配置mysql的环境-->
+        <environment id="mysql">
+            <!-- 配置事务的类型-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 配置数据源（连接池） -->
+            <dataSource type="POOLED">
+                <!-- 配置连接数据库的4个基本信息 -->
+                <property name="driver" value="${mysql.driver}"/>
+                <property name="url" value="${mysql.url}"/>
+                <property name="username" value="${mysql.username}"/>
+                <property name="password" value="${mysql.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--1    使用resource属性加载单个Mapper映射文件-->
+    <!--        <mappers>-->
+    <!--            <mapper resource="cn/bdqn/mapper/EmployeeMapper.xml"/>-->
+    <!--        </mappers>-->
+
+    <!--2    使用class属性加载单个映射文件-->
+    <!--    <mappers>-->
+    <!--        <mapper class="cn.bdqn.mapper.EmployeeMapper"></mapper>-->
+    <!--    </mappers>-->
+
+    <!--3    批量加载Mapper映射文件-->
+    <mappers>
+        <package name="cn.bdqn.mapper"/>
+    </mappers>
+
+
+</configuration>
